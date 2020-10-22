@@ -18,6 +18,7 @@ var datetime = require('./routes/datetime');
 var datetimeRfc1123 = require('./routes/datetime-rfc1123');
 var duration = require('./routes/duration');
 var complex = require('./routes/complex');
+var polymorphic = require('./routes/polymorphic')
 var report = require('./routes/report');
 var dictionary = require('./routes/dictionary');
 var paths = require('./routes/paths');
@@ -535,6 +536,7 @@ app.use('/datetimeRfc1123', new datetimeRfc1123(coverage).router);
 app.use('/duration', new duration(coverage, optionalCoverage).router);
 app.use('/array', new array(coverage).router);
 app.use('/complex', new complex(coverage).router);
+app.use('/polymorphic', new polymorphic(coverage).router);
 app.use('/dictionary', new dictionary(coverage).router);
 app.use('/paths', new paths(coverage).router);
 app.use('/queries', new queries(coverage).router);
